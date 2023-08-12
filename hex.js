@@ -22,21 +22,9 @@ function displayQuestion() {
 
 let correctAnswer;
 
-checkButton.addEventListener("click", function() {
-  const userAnswer = answerElement.value.toUpperCase();
-
-  if (userAnswer === correctAnswer) {
-    resultElement.textContent = "正解！次の問題に進んでください。";
-    displayQuestion();
-  } else {
-    resultElement.textContent = "不正解です。もう一度試してみてください。";
-  }
-});
-
-displayQuestion();
-
 answerElement.addEventListener("keyup", function(event) {
   if (event.key === "Enter") {
+    event.preventDefault();
     checkAnswer();
   }
 });
@@ -54,4 +42,4 @@ function checkAnswer() {
   }
 }
 
-// ...（後のコード）
+displayQuestion();
