@@ -34,3 +34,24 @@ checkButton.addEventListener("click", function() {
 });
 
 displayQuestion();
+
+answerElement.addEventListener("keyup", function(event) {
+  if (event.key === "Enter") {
+    checkAnswer();
+  }
+});
+
+checkButton.addEventListener("click", checkAnswer);
+
+function checkAnswer() {
+  const userAnswer = answerElement.value.toUpperCase();
+
+  if (userAnswer === correctAnswer) {
+    resultElement.textContent = "正解！次の問題に進んでください。";
+    displayQuestion();
+  } else {
+    resultElement.textContent = "不正解です。もう一度試してみてください。";
+  }
+}
+
+// ...（後のコード）
