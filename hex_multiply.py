@@ -8,9 +8,9 @@ def main():
         if a*b == c:
             print("correct")
         else :
-            print("wrong")
+            print("wrong\ncorrect value is " + str(format(a*b,'x')))
     except ValueError:
-        print("invalid value")
+        print("invalid value\ncorrect value is " + str(format(a*b,'x')))
     except KeyboardInterrupt:
         print("\n goodbye")
         sys.exit()
